@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <title>متجري</title>
   <style>
-    body { font-family: Tahoma, Arial; direction: rtl; text-align: center; }
+    body { 
+      font-family: Tahoma, Arial; 
+      direction: rtl; 
+      text-align: center; 
+    }
     .hidden { display: none; }
-    .product { border: 1px solid #ccc; margin: 8px; padding: 10px; border-radius: 8px; }
+    .product { 
+      border: 1px solid #ccc; 
+      margin: 8px; 
+      padding: 10px; 
+      border-radius: 8px; 
+    }
   </style>
   <script type="module">
     import { createClient } from "https://esm.sh/@supabase/supabase-js"
@@ -45,6 +54,7 @@
       if (error) {
         alert("❌ خطأ: " + error.message)
       } else {
+        alert("✅ تم تسجيل الدخول بنجاح")
         document.getElementById("login-box").classList.add("hidden")
         document.getElementById("products-box").classList.remove("hidden")
         loadProducts()
@@ -90,10 +100,10 @@
     <button onclick="signup()">إنشاء حساب</button>
   </div>
 
-  <!-- صندوق عرض المنتجات -->
+  <!-- صندوق المنتجات -->
   <div id="products-box" class="hidden">
-    <h2>المنتجات المتاحة</h2>
-    <div id="products">⏳ جاري التحميل...</div>
+    <h2>المنتجات</h2>
+    <div id="products"></div>
   </div>
 </body>
 </html>
